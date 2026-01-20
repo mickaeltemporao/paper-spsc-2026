@@ -4,6 +4,8 @@ import requests
 import zipfile
 import pandas as pd
 
+# %%
+
 # Preparing Relevant Paths & Folders
 file_url = "https://github.com/datamisc/ess-10/raw/main/data.zip"
 data_dir = "data/raw/"
@@ -49,5 +51,3 @@ check_data()
 # Loading the CSV Data
 df1 = pd.read_csv(csv_path) # gets the data and saves it in "df1"
 df1
-
-

@@ -18,8 +18,7 @@ def get_data():
 
     if os.path.exists(csv_path):
         print(f"✅ CSV already exists: {csv_path}")
-        return
-
+        return pd.read_csv(csv_path)
     print("❗ CSV not found. Downloading ZIP...")
 
     # Download ZIP
@@ -42,3 +41,5 @@ def get_data():
             f"CSV '{csv_filename}' not found inside ZIP. "
             f"Check ZIP contents in {data_dir}."
         )
+
+    return pd.read_csv(csv_path)

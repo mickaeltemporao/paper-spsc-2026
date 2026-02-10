@@ -4,20 +4,18 @@ import requests
 import zipfile
 import pandas as pd
 
-# %%
+# Function to download the dataset if not available
+def get_data():
+    # Preparing Relevant Paths & Folders
+    file_url = "https://github.com/datamisc/ess-10/raw/main/data.zip"
+    data_dir = "data/raw/"
+    zip_path = os.path.join(data_dir, "data.zip")
+    csv_filename = "ESS10.csv"
+    csv_path = os.path.join(data_dir, csv_filename)
 
-# Preparing Relevant Paths & Folders
-file_url = "https://github.com/datamisc/ess-10/raw/main/data.zip"
-data_dir = "data/raw/"
-zip_path = os.path.join(data_dir, "data.zip")
-csv_filename = "ESS10.csv"
-csv_path = os.path.join(data_dir, csv_filename)
+    # Ensure directory exists
+    os.makedirs(data_dir, exist_ok=True)
 
-# Ensure directory exists
-os.makedirs(data_dir, exist_ok=True)
-
-# Creating a FUNCTION to download the dataset if not available
-def check_data():
     if os.path.exists(csv_path):
         print(f"✅ CSV already exists: {csv_path}")
         return
@@ -44,10 +42,3 @@ def check_data():
             f"CSV '{csv_filename}' not found inside ZIP. "
             f"Check ZIP contents in {data_dir}."
         )
-
-# Use the created function to check if data has been downloaded
-check_data()
-
-# Loading the CSV Data
-df1 = pd.read_csv(csv_path) # gets the data and saves it in "df1"
-df1

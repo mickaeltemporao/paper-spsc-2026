@@ -1,3 +1,6 @@
+# excluding misc folder
+misc/
+
 # excluding uv files
 .python-version
 pyproject.toml

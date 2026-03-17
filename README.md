@@ -1,2 +1,3 @@
-# paper-spsc-2026
-Paper Repository for the SPSC class of 2026
+# Repository for the SPSC Class Paper 2025-2026
+
+

@@ -2,6 +2,7 @@ import pandas as pd
 from data import get_data
 
 def subset():
+    """Load or create the ESS subset data."""
     try:
         return pd.read_csv("data/ess_subset.csv")
     except:
@@ -9,10 +10,10 @@ def subset():
 
         vars_dict = {
             "cntry": "country",
-            # "agea": "age",  
+            "agea": "age",  
             "clsprty": "closer_party_dummy",  # Feel closer to a particular party than all other parties
-            # "edlvdfr": "education",
-            # "gndr": "gender",
+            "edlvdfr": "education",
+            "gndr": "gender",
             "lrscale": "ideology",  # Left-right self-placement
             "polintr": "pol_int",
             "prtclffr": "closer_party",  # Which party feel closer to, France
